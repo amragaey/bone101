@@ -10,3 +10,9 @@ script:
   - htmlproof ./_site --only-4xx --check-favicon --check-html
   #- make && make test
   #- wget -O- http://travis.debian.net/script.sh | sh -
+
+# whitelist
+branches:
+  only:
+    - master
+    - gh-pages
