@@ -4,8 +4,8 @@ rvm:
 sudo: required
 services:
   - docker
-before_script: gem install jekyll html-proofer
+before_script: gem install github-pages jekyll html-proofer
 script:
-  - make && make test
+  - jekyll build
+  #- make && make test
   #- wget -O- http://travis.debian.net/script.sh | sh -
-
