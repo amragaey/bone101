@@ -176,7 +176,52 @@ Use this method to delete the latest button added in buttons object.
 the method returns the deleted button object.
 
 ```javascript
-○   button.get = function()
+○ button.get = function()
 ```
 Use this method to return buttons object.
 
+```javascript
+ ui.bar = (function() {
+    var bar = {};
+    /* 
+     * bar objects
+     * are defined here
+    */
+  })
+```
+`ui.bar`, an IIFE provides sliderbar functionalities. it wraps the functions used to create, draw, move, and test sliderbar. the bar should be created after creating a probe and choosing the coressponding pin.
+
+```javascript
+○ bar.create = function(probe, pin)
+```
+Use bar.create to create a new sliderbar object, the bar properties are: color, outline color, height, length, move status, slider position. the function creates the sliderbar based on the connected button, for example `pwm` button generates a frequency slider that differs to the timing slider in that it doesn't add 's' to the number. 
+
+**arguments**:
+- b: probe: button object to be connected to.
+- pin: pin object to be connected to.
+
+```javascript
+○ bar.draw = function()
+```
+Use bar.draw to draw the created bar object to the `Bar` canvas context.
+
+```javascript
+○ bar.move = function(event, pin)
+```
+Use bar.move for slider bar functionality.
+
+```javascript
+○ bar.off = function()
+```
+Use bar.off to change `move` state of the bar from on to off.
+This function is implemented and is unused currently in Events.
+
+```javascript
+○ bar.sliderTest = function(event)
+```
+Use bar.sliderTest to get the black square slider in the bar.
+
+```javascript
+○ bar.test = function(event)
+```
+Use bar.test to get the whole slider bar.
