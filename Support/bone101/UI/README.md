@@ -194,7 +194,7 @@ Use this method to return buttons object.
 ```javascript
 ○ bar.create = function(probe, pin)
 ```
-Use bar.create to create a new sliderbar object, the bar properties are: color, outline color, height, length, move status, slider position. the function creates the sliderbar based on the connected button, for example `pwm` button generates a frequency slider that differs to the timing slider in that it doesn't add 's' to the number. 
+Use bar.create to create a new sliderbar object, the bar properties are: color, outline color, height, length, move status, slider position. The function creates the sliderbar based on the connected button, for example `pwm` button generates a frequency slider that differs to the timing slider in that it doesn't add 's' to the number. 
 
 **arguments**:
 - b: probe: button object to be connected to.
@@ -206,7 +206,7 @@ Use bar.create to create a new sliderbar object, the bar properties are: color, 
 Use bar.draw to draw the created bar object to the `Bar` canvas context.
 
 ```javascript
-○ bar.move = function(event, pin)
+○ bar.move = function(event)
 ```
 Use bar.move for slider bar functionality.
 
