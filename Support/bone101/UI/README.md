@@ -197,7 +197,7 @@ Use this method to return buttons object.
 Use bar.create to create a new sliderbar object, the bar properties are: color, outline color, height, length, move status, slider position. The function creates the sliderbar based on the connected button, for example `pwm` button generates a frequency slider that differs to the timing slider in that it doesn't add 's' to the number. 
 
 **arguments**:
-- b: probe: button object to be connected to.
+- probe: button object to be connected to.
 - pin: pin object to be connected to.
 
 ```javascript
@@ -225,3 +225,49 @@ Use bar.sliderTest to get the black square slider in the bar.
 ○ bar.test = function(event)
 ```
 Use bar.test to get the whole slider bar.
+
+```javascript
+ ui.wire = (function() {
+    var wire = {};
+    /* 
+     * wire objects
+     * are defined here
+    */
+  })
+```
+`ui.wire`, an IIFE provides all functions that are responsible for drawing wires from different probes to pins. Wires are drawn dependent on buttons, they use **`graphColors`** button object property, so each wire created uses a new color related to that button color. Wires are drawn in `BTN` canvas.
+
+```javascript
+○ wire.led = function(pin, probe)
+```
+Use wire.led to draw the wire from the led probe to the `USR` pins.
+
+**arguments**:
+- pin: pin object to be connected to.
+- probe: button object to be connected to.
+
+```javascript
+○ wire.analog = function(pin, probe)
+```
+Use wire.analog to draw the wire from analog probe to analog pins.
+
+**arguments**:
+- pin: pin object to be connected to.
+- probe: button object to be connected to.
+
+```javascript
+○ wire.link = function(btn1,btn2)
+```
+Use wire.link to draw a wiring link between two buttons, as example when you drag an input button to the graph an output button is created, the function here draws the link between this two buttons.
+
+**arguments**:
+- btn1: the output probe object.
+- btn2: the input probe object.
+
+```javascript
+○ wire.drawToGraph = function(pin)
+```
+Use wire.drawToGraph to draw a horizontal line with the color of wire beside axis graph.
+
+**arguments**:
+- pin: pin object that is the wire connected to.
